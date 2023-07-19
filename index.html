@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário 2023</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="titulo">
+        <h1>Calendário 2023</h1>
+    </div>
+
+    <div id="adicionar">
+        <h2>Adicionar Evento</h2>
+        <form id="event-form">
+            <label for="event-date">Data do Evento:</label>
+            <input type="date" id="event-date" required>
+            <br>
+            <label for="event-name">Nome do Evento:</label>
+            <input type="text" id="event-name" required>
+            <br>
+            <input type="submit" value="Adicionar Evento" class="event-submit">
+        </form>
+    </div>
+
+    <div id="eventos">
+        <h2>Eventos</h2>
+        <ul id="event-list"></ul>
+
+        <script>
+            document.getElementById('event-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var dateInput = document.getElementById('event-date');
+                var nameInput = document.getElementById('event-name');
+                var dateValue = dateInput.value;
+                var nameValue = nameInput.value;
+
+                if (dateValue && nameValue) {
+                    var eventList = document.getElementById('event-list');
+                    var listItem = document.createElement('li');
+                    listItem.innerText = dateValue + ': ' + nameValue;
+                    eventList.appendChild(listItem);
+
+                    // Limpar os campos do formulário
+                    dateInput.value = '';
+                    nameInput.value = '';
+                }
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

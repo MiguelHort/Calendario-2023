@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #ff00cc, #333399);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#adicionar input {
+    border-radius: 5px;
+    border: none;
+}
+
